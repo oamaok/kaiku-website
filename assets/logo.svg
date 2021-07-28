@@ -1,0 +1,71 @@
+<svg
+id="logo"
+viewBox="0 0 72 100"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+<defs>
+  <linearGradient id="gradient" gradientTransform="rotate(90)">
+    <stop offset="0%" stop-color="#4177c3" />
+    <stop offset="100%" stop-color="#876fdb" />
+  </linearGradient>
+  <polyline
+    id="zigzag"
+    points="59 -50 13 0 59 50 13 100 59 150 13 200"
+    stroke="#fff"
+    stroke-width="13"
+    fill="none"
+    stroke-linejoin="miter"
+  />
+  <clipPath id="cut-off-top">
+    <rect x="13" y="0" width="46" height="50" />
+  </clipPath>
+  <clipPath id="cut-off-bottom">
+    <rect x="13" y="50" width="46" height="50" />
+  </clipPath>
+  <mask id="mask">
+    <rect x="0" y="0" width="13" height="100" fill="#fff" />
+    <rect x="59" y="0" width="13" height="100" fill="#fff" />
+    <g clip-path="url(#cut-off-top)">
+      <g y="0">
+        <use href="#zigzag" />
+        <use href="#zigzag" y="50" />
+        <animateTransform
+          attributeName="transform"
+          begin="indefinite"
+          type="translate"
+          dur="2s"
+          repeatCount="1"
+          calcMode="spline"
+          values="0 0;0 -100"
+          keySplines="0.5 0 0.5 1"
+        />
+      </g>
+    </g>
+    <g clip-path="url(#cut-off-bottom)">
+      <g>
+        <use href="#zigzag" />
+        <use href="#zigzag" y="50" />
+        <animateTransform
+          attributeName="transform"
+          begin="indefinite"
+          type="translate"
+          dur="2s"
+          repeatCount="1"
+          calcMode="spline"
+          values="0 -100;0 0"
+          keySplines="0.5 0 0.5 1"
+        />
+      </g>
+    </g>
+  </mask>
+</defs>
+<rect
+  x="0"
+  y="0"
+  width="72"
+  height="100"
+  fill="url(#gradient)"
+  mask="url(#mask)"
+/>
+</svg>

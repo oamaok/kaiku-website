@@ -72,7 +72,11 @@ window.addEventListener('load', () => {
     const editor = CodeMirror(editorElement, {
       value: code.trim(),
       theme: 'material-darker',
+      lineWrapping: true,
       mode: 'jsx',
+      extraKeys: {
+        Tab: false,
+      },
     })
 
     render(h(Component), targetElement, state)
@@ -85,24 +89,39 @@ window.addEventListener('load', () => {
       }
 
       const code = editor.getValue()
-      const transformed = Babel.transform(code, {
-        plugins: [
-          'transform-modules-umd',
-          ['transform-react-jsx', { pragma: 'h' }],
-        ],
-      }).code
-      window.exports = {}
-      eval(transformed)
+      try {
+        const transformed = Babel.transform(code, {
+          plugins: [
+            'transform-modules-umd',
+            ['transform-react-jsx', { pragma: 'h' }],
+          ],
+        }).code
 
-      const { default: Component, state } = window.exports
-      render(h(Component), targetElement, state)
+        const { default: Component, state } = new Function(
+          `"use strict";const exports = {};${transformed}; return exports`
+        )()
+
+        render(h(Component), targetElement, state)
+      } catch (err) {
+        const preElement = document.createElement('pre')
+        preElement.className = 'error'
+        preElement.innerText = err
+        targetElement.appendChild(preElement)
+      }
     }
 
     rerunElement.addEventListener('click', rerun)
   }
 
-  loadExample('simple-counter.jsx')
-  loadExample('ticker.jsx')
+  const examples = [
+    'simple-counter.jsx',
+    'ticker.jsx',
+    'deep-objects.jsx',
+    'passed-state.jsx',
+    'todo-app.jsx',
+  ]
+
+  examples.forEach(loadExample)
 
   const logoElement = document.querySelector('#logo')
 
@@ -113,7 +132,7 @@ window.addEventListener('load', () => {
     animationRunning = true
     setTimeout(() => {
       animationRunning = false
-    }, 3000)
+    }, 2500)
 
     logoElement.querySelectorAll('animateTransform').forEach((anim) => {
       anim.beginElement()

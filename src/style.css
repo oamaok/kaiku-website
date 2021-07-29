@@ -12,12 +12,26 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  border: 2px solid rgba(127, 127, 127, 0.5);
+  border-radius: 2px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #0f1319;
   color: #ffffff;
   letter-spacing: -0.04em;
+}
+
+input {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.04em;
   font-size: 16px;
+}
+
+pre {
+  white-space: pre-wrap;
 }
 
 button {
@@ -55,18 +69,26 @@ nav a .github {
 h1,
 h2,
 h3,
+h4,
 button.cta {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
 }
 
+h4,
 button.cta {
   color: #466193;
 }
 
+h4::before,
 button.cta::before {
   content: '\3009';
   font-weight: 900;
+}
+
+h4 {
+  letter-spacing: -0.08em;
+  margin-bottom: 10px;
 }
 
 header button.cta::after {
@@ -107,13 +129,30 @@ main {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  padding: 0 40px;
 }
 
 section {
-  width: 70vw;
+  max-width: 1400px;
+  width: 100%;
   display: flex;
   flex-flow: row;
   margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 1000px) {
+  section {
+    flex-flow: column !important;
+  }
+
+  section .copy {
+    width: 100% !important;
+    padding: 40px !important;
+  }
+
+  section .example {
+    width: 100% !important;
+  }
 }
 
 section:nth-child(even) {
@@ -132,10 +171,23 @@ section .copy h3 {
   font-size: 35px;
   font-weight: 300;
   margin-bottom: 30px;
+  letter-spacing: -0.08em;
 }
 
 section .copy p {
-  margin-bottom: 16px;
+  margin-bottom: 30px;
+}
+
+section .copy p:last-child {
+  margin-bottom: 0;
+}
+
+section .copy span.code {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #c8cad0;
+  border: 1px solid #aaacb2;
+  border-radius: 3px;
+  padding: 0 4px;
 }
 
 section .example {
@@ -171,8 +223,14 @@ section .example .target {
   font-size: 18px;
 }
 
+section .example .target pre.error {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #eaecf2;
+}
+
 section .example .target span {
-  margin: 0 5px;
+  margin-right: 5px;
 }
 
 section .example .target button {
@@ -183,6 +241,26 @@ section .example .target button {
   border-radius: 3px;
   font-weight: 500;
   margin-right: 5px;
+}
+
+section .example .target input[type='checkbox'] {
+  margin: 0 5px;
+}
+section .example .target pre {
+  margin-bottom: 10px;
+}
+
+section .example .target input[type='text'] {
+  border: 2px solid #eaecf2;
+  color: #eaecf2;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 2px 8px;
+  margin-right: 5px;
+}
+
+section .example .target ul {
+  padding-left: 20px;
 }
 
 .CodeMirror {

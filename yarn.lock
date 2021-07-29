@@ -2466,7 +2466,15 @@ hsla-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/hsla-regex/-/hsla-regex-1.0.0.tgz#c1ce7a3168c8c6614033a4b5f7877f3b225f9c38"
   integrity sha1-wc56MWjIxmFAM6S194d/OyJfnDg=
 
-html-minifier-terser@^5.0.1:
+html-loader@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/html-loader/-/html-loader-2.1.2.tgz#17eb111441e863a9308071ed876b4ba861f143df"
+  integrity sha512-XB4O1+6mpLp4qy/3qg5+1QPZ/uXvWtO64hNAX87sKHwcHkp1LJGU7V3sJ9iVmRACElAZXQ4YOO/Lbkx5kYfl9A==
+  dependencies:
+    html-minifier-terser "^5.1.1"
+    parse5 "^6.0.1"
+
+html-minifier-terser@^5.0.1, html-minifier-terser@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/html-minifier-terser/-/html-minifier-terser-5.1.1.tgz#922e96f1f3bb60832c2634b79884096389b1f054"
   integrity sha512-ZPr5MNObqnV/T9akshPKbVgyOqLmy+Bxo7juKCfTfnjNniTAMdy4hz21YQqoofMBJD2kdREaqPPdThoR78Tgxg==
@@ -2783,10 +2791,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-kaiku@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/kaiku/-/kaiku-1.10.0.tgz#cd987c991ef67576bfbc18c2367213e2740f2c28"
-  integrity sha512-AReEoyIYnkfx0vAGLiuyf7ePrUcdZCU+5U2xdjpnq8ks3SyDvlLq6ritzo+Y4QE2NY32FQUMHrurF2RJ1EIBAQ==
+kaiku@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/kaiku/-/kaiku-1.10.1.tgz#3baa644f30b9f27501dd79020f64dd58944a07cb"
+  integrity sha512-KFAMq7yomLaOqj4PtV8qfZxYq8RvP7FuSPR84SWrBNWcZoL6PAYEfnGYbcN2ktz4Ye6yqzgLN2ZewHYMr+D7bA==
 
 kind-of@^6.0.2:
   version "6.0.3"

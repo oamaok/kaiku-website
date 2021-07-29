@@ -1,16 +1,8 @@
 /*****
-<h3>Small size</h3>
-<p>
-  Most UI frameworks are large enough to be the majority of an app's
-  JavaScript size. Preact is different: it's small enough that your
-  code is the largest part of your application.
-</p>
-<p>
-  That means less JavaScript to download, parse and execute - leaving
-  more time for your code, so you can build an experience you define
-  without fighting to keep a framework under control.
-</p>
-<button class="cta">Try it out</button>
+<h3>Compact code</h3>
+<p>Forget about wrapping state updates in callbacks. With Kaiku, you can mutate the state as you would an original JavaScript object.</p>
+<h4>Challenge</h4>
+<p>Try adding a button which resets <span class="code">state.counter</span> next to the others.</p>
 *****/
 export default function Counter() {
   const state = useState({ counter: 0 })

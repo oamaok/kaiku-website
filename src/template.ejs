@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:image" content="../assets/og-image.png" />
+    <title>Kaiku – Reactive UI Framework for the Web</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./guide.html">Guide</a>
+      <a href="./playground.html">Playground</a>
+      <a
+        href="https://github.com/oamaok/kaiku"
+        target="_blank"
+        title="Source on Github"
+        ><div class="github"></div></a>
+    </nav>
+    <%= require('!!html-loader!./' + htmlWebpackPlugin.options.filename).default %>
+  </body>
+</html>

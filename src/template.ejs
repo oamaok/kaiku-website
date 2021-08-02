@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:image" content="../assets/og-image.png" />
+    <meta property="og:image" content="<%=require('../assets/og-image.png')%>" />
     <title>Kaiku – Reactive UI Framework for the Web</title>
   </head>
   <body>
     <nav>
-      <a href="./">Home</a>
+      <a href="./" class="home">
+        <img src="<%=require('../assets/logo.png')%>" />Kaiku</a>
       <a href="./guide.html">Guide</a>
       <a href="./playground.html">Playground</a>
       <a

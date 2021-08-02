@@ -10,8 +10,20 @@ export default function Counter() {
   return (
     <div>
       <div>Counter: {state.counter}</div>
-      <button onClick={() => { state.counter++ }}>Increment</button>
-      <button onClick={() => { state.counter-- }}>Decrement</button>
+      <button
+        onClick={() => {
+          state.counter++
+        }}
+      >
+        Increment
+      </button>
+      <button
+        onClick={() => {
+          state.counter--
+        }}
+      >
+        Decrement
+      </button>
     </div>
   )
 }

@@ -9,7 +9,9 @@ const TodoItem = ({ item }) => (
     <input
       type="checkbox"
       value={item.done}
-      onClick={() => { item.done = !item.done }}
+      onClick={() => {
+        item.done = !item.done
+      }}
     />
   </li>
 )
@@ -22,7 +24,9 @@ export default function TodoApp() {
       <input
         type="text"
         value={state.newItemName}
-        onInput={(evt) => { state.newItemName = evt.target.value }}
+        onInput={(evt) => {
+          state.newItemName = evt.target.value
+        }}
       />
       <button
         onClick={() => {
@@ -33,7 +37,9 @@ export default function TodoApp() {
         Add Todo item
       </button>
       <ul>
-        {state.items.map((item) => <TodoItem item={item} />)}
+        {state.items.map((item) => (
+          <TodoItem item={item} />
+        ))}
       </ul>
     </div>
   )

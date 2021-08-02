@@ -30,10 +30,16 @@ body {
   min-height: 100vh;
 }
 
-input {
+input,
+select,
+option {
   font-family: 'Poppins', sans-serif;
   letter-spacing: -0.04em;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 pre {
@@ -51,6 +57,19 @@ nav {
   height: 140px;
   justify-content: center;
   font-weight: 500;
+}
+
+nav a.home {
+  img {
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  font-size: 20px;
+
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  letter-spacing: -0.08em;
 }
 
 nav a {

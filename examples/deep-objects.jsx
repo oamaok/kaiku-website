@@ -14,7 +14,9 @@ export default function DeepObjectHandling() {
       <input
         type="text"
         value={state.i.am.a.very.deep.object}
-        onInput={evt => { state.i.am.a.very.deep.object = evt.target.value }}
+        onInput={(evt) => {
+          state.i.am.a.very.deep.object = evt.target.value
+        }}
       />
     </div>
   )

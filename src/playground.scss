@@ -6,7 +6,22 @@ main.playground {
 
   .examples {
     width: 100%;
-    height: 50px;
+    padding: 20px;
+    background: linear-gradient(to left, #876fdb, #4177c3);
+
+    select {
+      font-size: 16px;
+      background: #eaecf2;
+      color: #4177c3;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+
+    select:focus-visible {
+      border: none;
+    }
   }
 
   .playground {
@@ -16,8 +31,10 @@ main.playground {
     .editor {
       width: 50%;
       min-height: 100%;
+      max-height: 100%;
       background: #212121;
       padding: 20px;
+      position: relative;
     }
 
     .target {
@@ -25,6 +42,31 @@ main.playground {
       min-height: 100%;
       padding: 20px;
       background-color: #eaecf2;
+      color: #21252a;
+
+      input,
+      input[type='text'] {
+        border: 2px solid #21252a;
+        color: #21252a;
+        border-radius: 3px;
+        font-size: 16px;
+        padding: 2px 8px;
+        margin-right: 5px;
+      }
+
+      button,
+      input[type='button'] {
+        font-size: 16px;
+        background: #21252a;
+        color: #eaecf2;
+        padding: 4px 10px;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 3px;
+        margin-left: 5px;
+      }
+      input[type='checkbox'] {
+        margin: 0 5px;
+      }
     }
   }
 }

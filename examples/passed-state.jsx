@@ -12,7 +12,7 @@ const Person = ({ person }) => (
       checked={person.checked}
       onClick={() => {
         // It's this easy!
-        person.checked = !person.checked;
+        person.checked = !person.checked
       }}
     />
   </span>
@@ -22,10 +22,10 @@ export default function App() {
   const state = useState({
     people: [
       { name: 'Alice', checked: true },
-      { name: 'Bob',   checked: false },
+      { name: 'Bob', checked: false },
       { name: 'Chris', checked: false },
       { name: 'David', checked: true },
-    ]
+    ],
   })
 
   const checkedPeople = state.people.filter((person) => person.checked)
@@ -33,7 +33,9 @@ export default function App() {
   return (
     <div>
       <div>{checkedPeople.length} people checked in.</div>
-      {state.people.map((person) => <Person person={person} />)}
+      {state.people.map((person) => (
+        <Person person={person} />
+      ))}
     </div>
   )
 }

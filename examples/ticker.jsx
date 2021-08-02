@@ -6,11 +6,19 @@
 *****/
 export const state = createState({ ticks: 0 })
 
-export default function Ticker () {
+export default function Ticker() {
   return (
     <div>
-      <div>There have been <b>{state.ticks} ticks</b> since last update.</div>
-      <button onClick={() => { state.ticks = 0 }}>Reset</button>
+      <div>
+        There have been <b>{state.ticks} ticks</b> since last update.
+      </div>
+      <button
+        onClick={() => {
+          state.ticks = 0
+        }}
+      >
+        Reset
+      </button>
     </div>
   )
 }

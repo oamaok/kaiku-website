@@ -4,9 +4,9 @@ import { execute } from './execute-user-code'
 const mainElement = document.querySelector('main')
 
 const loadExample = (file) => {
-  const { default: Component, state } = require(`../examples/${file}.jsx`)
+  const { default: Component, state } = require(`../examples/${file}`)
 
-  const rawFile = require(`!!raw-loader!../examples/${file}.jsx`).default
+  const rawFile = require(`!!raw-loader!../examples/${file}`).default
 
   const [copy, code] = rawFile.split('*****/')
 
@@ -72,11 +72,11 @@ const loadExample = (file) => {
 }
 
 const examples = [
-  'simple-counter',
-  'ticker',
-  // 'deep-objects',
-  // 'passed-state',
-  'todo-app',
+  'simple-counter.jsx',
+  'ticker.jsx',
+  // 'deep-objects.jsx',
+  // 'passed-state.jsx',
+  'todo-app.jsx',
 ]
 
 examples.forEach(loadExample)

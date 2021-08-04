@@ -2,21 +2,21 @@ import CodeMirror from 'codemirror'
 import { execute } from './execute-user-code'
 
 const examples = [
-  'simple-counter',
-  'ticker',
-  'deep-objects',
-  'passed-state',
-  'todo-app',
+  'simple-counter.jsx',
+  'ticker.jsx',
+  'deep-objects.jsx',
+  'passed-state.jsx',
+  'todo-app.jsx',
 ]
 
 const loadExampleCode = (file) => {
-  const rawFile = require(`!!raw-loader!../examples/${file}.jsx`).default
+  const rawFile = require(`!!raw-loader!../examples/${file}`).default
 
   const [, code] = rawFile.split('*****/')
   return code.trim()
 }
 
-const defaultExample = 'todo-app'
+const defaultExample = 'todo-app.jsx'
 
 const exampleSelectElement = document.querySelector('#example-select')
 
@@ -27,7 +27,7 @@ exampleSelectElement.addEventListener('change', (evt) => {
 
 for (const example of examples) {
   const optionElement = document.createElement('option')
-  optionElement.innerText = example + '.jsx'
+  optionElement.innerText = example
   optionElement.selected = example === defaultExample
   exampleSelectElement.appendChild(optionElement)
 }

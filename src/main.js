@@ -8,15 +8,15 @@ window.addEventListener('load', () => {
   switch (location.pathname.split('/').pop()) {
     case 'index.html':
     case '': {
-      require('./index.js')
+      import('./index.js')
       break
     }
     case 'playground.html': {
-      require('./playground.js')
+      import('./playground.js')
       break
     }
     case 'guide.html': {
-      require('./guide.js')
+      import('./guide.js')
       break
     }
   }

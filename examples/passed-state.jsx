@@ -33,9 +33,7 @@ export default function App() {
   return (
     <div>
       <div>{checkedPeople.length} people checked in.</div>
-      {state.people.map((person) => (
-        <Person person={person} />
-      ))}
+      {state.people.map((person) => <Person person={person} />)}
     </div>
   )
 }

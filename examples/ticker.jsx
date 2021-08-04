@@ -12,13 +12,7 @@ export default function Ticker() {
       <div>
         There have been <b>{state.ticks} ticks</b> since last update.
       </div>
-      <button
-        onClick={() => {
-          state.ticks = 0
-        }}
-      >
-        Reset
-      </button>
+      <button onClick={() => { state.ticks = 0 }}>Reset</button>
     </div>
   )
 }

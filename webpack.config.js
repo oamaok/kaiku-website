@@ -5,19 +5,22 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-const page = {
+const metadata = {
   title: 'Kaiku – Reactive UI Framework for the Web',
   description:
     'A lightweight JSX-based UI framework with a freely mutable, boilerplate-free global state management.',
 }
 
-const pages = ['index.html', 'guide.html', 'playground.html']
+const pages = ['index', 'guide', 'playground']
+
+const origin = process.env.NODE_ENV === 'production' ? 'https://kaiku.dev/' : ''
 
 module.exports = {
   entry: ['./src/main.js', './src/main.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
+    filename: 'assets/[name]-[fullhash].js',
+    assetModuleFilename: 'assets/[name]-[hash][ext][query]',
     clean: true,
   },
   mode: process.env.NODE_ENV,
@@ -47,18 +50,20 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'main.css' }),
+    new MiniCssExtractPlugin({ filename: 'assets/[name]-[fullhash].css' }),
     ...pages.map(
-      (filename) =>
+      (page) =>
         new HtmlWebpackPlugin({
           template: './src/template.ejs',
           title: page.title,
           meta: {
-            description: page.description,
-            'og:description': page.description,
-            'og:title': page.title,
+            description: metadata.description,
+            'og:description': metadata.description,
+            'og:title': metadata.title,
           },
-          filename,
+          origin,
+          page,
+          filename: page + '.html',
         })
     ),
     new HtmlWebpackInlineSVGPlugin({
@@ -66,7 +71,8 @@ module.exports = {
     }),
     new CssMinimizerPlugin(),
     new FaviconsWebpackPlugin({
-      logo: './assets/logo.svg',
+      logo: './assets/logo.png',
+      mode: 'light',
       prefix: '',
     }),
   ],

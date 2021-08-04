@@ -2,9 +2,11 @@
 
 @import 'codemirror/lib/codemirror.css';
 @import 'codemirror/theme/material-darker.css';
+@import 'codemirror/theme/ayu-mirage.css';
 
 @import './index.scss';
 @import './playground.scss';
+@import './guide.scss';
 
 * {
   outline: 0;
@@ -61,8 +63,8 @@ nav {
 
 nav a.home {
   img {
-    width: 20px;
-    margin-right: 10px;
+    width: 30px;
+    margin-right: 8px;
   }
 
   font-size: 20px;
@@ -88,6 +90,10 @@ nav a .github {
   background-size: contain;
   width: 24px;
   height: 24px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1,
@@ -154,4 +160,9 @@ header button.cta {
   font-size: 14px;
   width: 100%;
   height: 100%;
+}
+
+
+.cm-s-material-darker .cm-comment {
+  color: #a0a0a0;
 }

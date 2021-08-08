@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="<%= htmlWebpackPlugin.options.page %>">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +7,9 @@
     <title>Kaiku – Reactive UI Framework for the Web</title>
   </head>
   <body>
-    <nav>
+    <nav class="bar">
       <a href="./" class="home">
-        <img src="<%=require('../assets/logo.png')%>" />Kaiku</a>
+        <img src="<%=require('../assets/logo.png')%>" alt="Kaiku logo" />Kaiku</a>
       <a href="./guide.html">Guide</a>
       <a href="./playground.html">Playground</a>
       <a

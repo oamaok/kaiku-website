@@ -1,5 +1,6 @@
 import CodeMirror from 'codemirror'
 import { execute } from './execute-user-code'
+import 'codemirror/mode/jsx/jsx.js'
 
 const mainElement = document.querySelector('main')
 

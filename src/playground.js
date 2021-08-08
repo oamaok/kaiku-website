@@ -1,4 +1,5 @@
 import CodeMirror from 'codemirror'
+import 'codemirror/mode/jsx/jsx.js'
 import { execute } from './execute-user-code'
 
 const examples = [

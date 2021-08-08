@@ -41,7 +41,6 @@ main.index {
     .copy h3 {
       text-transform: capitalize;
       font-size: 35px;
-      font-weight: 300;
       margin-bottom: 30px;
       letter-spacing: -0.08em;
     }
@@ -52,14 +51,6 @@ main.index {
 
     .copy p:last-child {
       margin-bottom: 0;
-    }
-
-    .copy span.code {
-      font-family: 'JetBrains Mono', monospace;
-      background-color: #c8cad0;
-      border: 1px solid #aaacb2;
-      border-radius: 3px;
-      padding: 0 4px;
     }
 
     .example {
